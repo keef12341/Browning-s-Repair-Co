@@ -605,7 +605,7 @@
     <section class="quote-section" id="quote">
         <div class="quote-container">
             <h2>Get A Quote Now</h2>
-            <form class="quote-form">
+            <form class="quote-form" action="https://formspree.io/f/xeokjgbk" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -724,27 +724,6 @@
                     });
                 }
             });
-        });
-
-        // Form submission handler
-        document.querySelector('.quote-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.name || !data.email || !data.phone || !data.description) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Here you would typically send the data to your server
-            alert('Thank you for your quote request! We will contact you within 24 hours.');
-            
-            // Reset form
-            this.reset();
         });
 
         // Add glow effect to phone numbers on hover
