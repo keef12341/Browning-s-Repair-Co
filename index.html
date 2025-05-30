@@ -304,22 +304,68 @@
         }
 
         /* Footer */
+        /* Updated Footer Styles */
         .footer {
             background-color: #0f1419;
             padding: 40px 0;
-            text-align: center;
             border-top: 1px solid #F0A92B;
         }
-
+        
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-left {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-center {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .footer-right {
+            flex: 1;
+            min-width: 250px;
+            text-align: right;
+        }
+        
+        .footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        /* Mobile footer - stack vertically */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                text-align: center;
+                min-width: auto;
+            }
+            
+            .footer p {
+                margin-bottom: 5px;
+                font-size: 13px;
+            }
         }
 
-        .footer p {
-            margin-bottom: 10px;
-        }
 
         /* Enhanced mobile styles */
         @media (max-width: 768px) {
@@ -469,15 +515,21 @@
 </head>
 <body>
     <!-- Main Header -->
+    <!-- Main Header -->
     <header class="main-header">
         <div class="header-container">
             <img src="images/logo1.png" alt="Browning's Repair Company Logo" class="logo">
+            
+            <!-- Mobile phone number (shows only on mobile) -->
+            <a href="tel:+18655550123" class="mobile-phone">📞 (865) 555-0123</a>
+            
+            <!-- Desktop navigation (hidden on mobile) -->
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#why-us">Why Us</a></li>
                     <li><a href="#what-we-offer">What We Offer</a></li>
                     <li><a href="#reviews">Our Reviews</a></li>
-                    <li><a href="tel:+1234567890" class="nav-phone-btn">📞 (865) 555-0123</a></li>
+                    <li><a href="tel:+18655550123" class="nav-phone-btn">📞 (865) 555-0123</a></li>
                 </ul>
             </nav>
         </div>
@@ -637,16 +689,28 @@
     </section>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Browning's Repair Company. All rights reserved.</p>
-            <p>Established in 2017 by Justin Browning</p>
-            <p>Proudly serving Sevier County and surrounding areas with faith, family values, and quality craftsmanship.</p>
-            <p>Following God's path in business and life, dedicated to serving our community with integrity.</p>
-            <p>📞 (865) 555-0123 | 📧 info@browningsrepair.com</p>
+            <div class="footer-left">
+                <p>&copy; 2024 Browning's Repair Company</p>
+                <p>All rights reserved.</p>
+                <p>Established in 2017 by Justin Browning</p>
+            </div>
+            
+            <div class="footer-center">
+                <p>Proudly serving Sevier County and surrounding areas</p>
+                <p>with faith, family values, and quality craftsmanship.</p>
+                <p>Following God's path in business and life</p>
+            </div>
+            
+            <div class="footer-right">
+                <p>📞 (865) 555-0123</p>
+                <p>📧 info@browningsrepair.com</p>
+                <p>Dedicated to serving our community with integrity</p>
+            </div>
         </div>
     </footer>
-
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
