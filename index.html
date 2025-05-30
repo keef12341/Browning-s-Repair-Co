@@ -354,6 +354,77 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* Enhanced hover effects for about cards */
+            .about-card {
+                text-align: center;
+                padding: 30px;
+                background-color: rgba(240, 169, 43, 0.05);
+                border-radius: 15px;
+                transition: all 0.3s ease;
+                cursor: pointer; /* Add pointer cursor */
+            }
+            
+            .about-card:hover {
+                transform: translateY(-10px); /* Move up more on hover */
+                box-shadow: 0 15px 40px rgba(240, 169, 43, 0.4); /* Enhanced glow */
+                background-color: rgba(240, 169, 43, 0.1); /* Slight background glow */
+            }
+            
+            /* Enhanced hover effects for project items */
+            .project-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+                cursor: pointer; /* Add pointer cursor */
+            }
+            
+            .project-item:hover {
+                transform: translateY(-8px) scale(1.02); /* Move up and slightly scale */
+                box-shadow: 0 15px 35px rgba(240, 169, 43, 0.5); /* Enhanced glow */
+            }
+            
+            /* Enhanced nav menu hover effects */
+            .nav-menu a {
+                color: #F0A92B;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                padding: 10px 15px;
+                border-radius: 5px;
+                display: inline-block; /* Needed for transform to work */
+            }
+            
+            .nav-menu a:hover {
+                background-color: rgba(240, 169, 43, 0.15); /* Enhanced background glow */
+                box-shadow: 0 5px 15px rgba(240, 169, 43, 0.4); /* Add glow shadow */
+                transform: translateY(-3px); /* Move up slightly */
+            }
+            
+            /* Keep the phone button effect but enhance it */
+            .nav-phone-btn:hover {
+                box-shadow: 0 8px 25px rgba(240, 169, 43, 0.7) !important; /* Enhanced glow */
+                transform: translateY(-4px) !important; /* Move up more */
+            }
+            
+            /* Add glow effect to about card titles and content on hover */
+            .about-card:hover h3 {
+                text-shadow: 0 0 10px rgba(240, 169, 43, 0.6);
+                transition: all 0.3s ease;
+            }
+            
+            .about-card:hover p {
+                color: rgba(240, 169, 43, 0.9);
+                transition: all 0.3s ease;
+            }
+            
+            /* Add subtle glow to project images on hover */
+            .project-item:hover img {
+                filter: brightness(1.1) contrast(1.05);
+                transition: all 0.3s ease;
+            }
+
         }
 
     </style>
