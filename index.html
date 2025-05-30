@@ -340,35 +340,41 @@
             margin-bottom: 10px;
         }
 
-        /* Responsive Design */
+        /* Add this to your existing @media (max-width: 768px) section */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 gap: 20px;
             }
-
+        
             .nav-menu {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
-
+        
+            .logo {
+                height: 70px;
+                max-width: 180px;
+            }
+        
             .hero-content h1 {
                 font-size: 2.5rem;
             }
-
+        
             .hero-content p {
                 font-size: 1.1rem;
             }
-
+        
             .about-container {
                 grid-template-columns: 1fr;
             }
-
+        
             .projects-grid {
                 grid-template-columns: 1fr;
             }
         }
+
     </style>
 </head>
 <body>
