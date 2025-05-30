@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownings Repair Co - Home</title>
+    <title>Browning's Repair Company - Serving Sevier County</title>
     <style>
         * {
             margin: 0;
@@ -12,844 +12,551 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #141723;
+            font-family: 'Arial', sans-serif;
+            background-color: #111921;
             color: #F0A92B;
-            font-weight: bold;
             line-height: 1.6;
         }
 
-        .container {
+        /* Header Styles */
+        .header-top {
+            background-color: #0f1419;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #F0A92B;
+        }
+
+        .phone-number {
+            color: #F0A92B;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(240, 169, 43, 0.5);
+        }
+
+        .phone-number:hover {
+            text-shadow: 0 0 15px rgba(240, 169, 43, 0.8);
+            transform: scale(1.05);
+        }
+
+        .main-header {
+            background-color: #111921;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #F0A92B;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(240, 169, 43, 0.1);
+            box-shadow: 0 0 10px rgba(240, 169, 43, 0.3);
+        }
+
+        .nav-phone-btn {
+            background-color: #F0A92B;
+            color: #111921 !important;
+            padding: 12px 20px !important;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-phone-btn:hover {
+            box-shadow: 0 0 20px rgba(240, 169, 43, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background-image: url('website1.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 25, 33, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background-color: #F0A92B;
+            color: #111921;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 0 25px rgba(240, 169, 43, 0.8);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .about-card {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(240, 169, 43, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(240, 169, 43, 0.2);
+        }
+
+        .about-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px 0;
+            background-color: rgba(15, 20, 25, 0.5);
+        }
+
+        .projects-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Modern Header Styles */
-        .modern-header {
-            background-color: #111921;
-            padding: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .projects-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
         }
-        
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-        
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
-        
-        .logo-img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            border-radius: 8px;
+
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(240, 169, 43, 0.3);
         }
-        
-        .company-info h1 {
-            font-size: 1.8em;
-            margin: 0;
-            color: #F0A92B;
+
+        .project-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .reviews-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 80px 0;
+            background-color: rgba(15, 20, 25, 0.5);
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .quote-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .quote-form {
+            background-color: rgba(240, 169, 43, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
             font-weight: bold;
         }
-        
-        .company-info .tagline {
-            font-size: 0.9em;
-            margin: 0;
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #F0A92B;
+            border-radius: 5px;
+            background-color: #111921;
             color: #F0A92B;
-            opacity: 0.9;
+            font-size: 16px;
         }
-        
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
         }
-        
-        .main-nav a {
-            color: #F0A92B;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            padding: 10px 15px;
-            border-radius: 6px;
+
+        .submit-btn {
+            width: 100%;
+            background-color: #F0A92B;
+            color: #111921;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
         }
-        
-        .main-nav a:hover {
-            background-color: rgba(240, 169, 43, 0.1);
-            color: #F0A92B;
+
+        .submit-btn:hover {
+            box-shadow: 0 0 20px rgba(240, 169, 43, 0.6);
             transform: translateY(-2px);
         }
-        
-        .main-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background-color: yellow;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+
+        /* Footer */
+        .footer {
+            background-color: #0f1419;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #F0A92B;
         }
-        
-        .main-nav a:hover::after {
-            width: 80%;
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        .contact-box {
-            background: linear-gradient(135deg, yellow, #F0A92B);
-            border-radius: 12px;
-            padding: 3px;
-            box-shadow: 0 4px 15px rgba(255, 255, 0, 0.3);
+
+        .footer p {
+            margin-bottom: 10px;
         }
-        
-        .phone-number {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #111921;
-            color: yellow;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-        }
-        
-        .phone-number:hover {
-            background-color: yellow;
-            color: #111921;
-            transform: scale(1.05);
-        }
-        
-        .phone-icon {
-            font-size: 1.2em;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        
-        /* Mobile Responsiveness */
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content {
+            .header-container {
                 flex-direction: column;
-                text-align: center;
-                gap: 15px;
+                gap: 20px;
             }
-            
-            .logo-section {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .company-info h1 {
-                font-size: 1.5em;
-            }
-            
-            .main-nav ul {
+
+            .nav-menu {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
-            
-            .main-nav a {
-                font-size: 1em;
-                padding: 8px 12px;
-            }
-            
-            .contact-box {
-                order: -1;
-                width: 100%;
-                max-width: 250px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            
-            .phone-number {
-                padding: 10px 15px;
-                font-size: 1em;
-            }
-            
-            .company-info h1 {
-                font-size: 1.3em;
-            }
-            
-            .company-info .tagline {
-                font-size: 0.8em;
-            }
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 40px 0;
-        }
 
-        .hero h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .service-card {
-            background-color: #141723;
-            border: #F0A92B;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            color: #F0A92B;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .gallery-section {
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        .gallery-section h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .gallery-item {
-            position: relative;
-            height: 250px;
-            background-color: #141723;
-            border: #F0A92B;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 255, 0, 0.3);
-        }
-
-        .house-section {
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        .house-section h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
-
-        .house-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .house-3d {
-            perspective: 1000px;
-            width: 300px;
-            height: 300px;
-        }
-
-        .house {
-            width: 200px;
-            height: 200px;
-            position: relative;
-            margin: 0 auto;
-            transform-style: preserve-3d;
-            animation: rotate 15s infinite linear;
-            cursor: pointer;
-        }
-
-        .house:hover {
-            animation-play-state: paused;
-        }
-
-        .house-base {
-            width: 200px;
-            height: 150px;
-            background-color: #8B4513;
-            position: absolute;
-            bottom: 0;
-            border: 2px solid #654321;
-        }
-
-        .roof {
-            width: 0;
-            height: 0;
-            border-left: 110px solid transparent;
-            border-right: 110px solid transparent;
-            border-bottom: 80px solid #A0522D;
-            position: absolute;
-            top: -80px;
-            left: -10px;
-        }
-
-        .deck {
-            width: 220px;
-            height: 15px;
-            background-color: #CD853F;
-            position: absolute;
-            bottom: -15px;
-            left: -10px;
-            border: 1px solid #8B7355;
-        }
-
-        .door {
-            width: 30px;
-            height: 60px;
-            background-color: #654321;
-            position: absolute;
-            bottom: 0;
-            left: 85px;
-            border: 1px solid #4a2c17;
-        }
-
-        .window {
-            width: 25px;
-            height: 25px;
-            background-color: #87CEEB;
-            position: absolute;
-            border: 2px solid #4682B4;
-        }
-
-        .window.left {
-            top: 40px;
-            left: 40px;
-        }
-
-        .window.right {
-            top: 40px;
-            right: 40px;
-        }
-
-        .hvac-unit {
-            width: 30px;
-            height: 20px;
-            background-color: #696969;
-            position: absolute;
-            top: -60px;
-            right: 20px;
-            border: 1px solid #2F4F4F;
-        }
-
-        .landscaping {
-            width: 250px;
-            height: 30px;
-            background: linear-gradient(90deg, #228B22, #32CD32, #228B22);
-            position: absolute;
-            bottom: -45px;
-            left: -25px;
-            border-radius: 15px;
-        }
-
-        @keyframes rotate {
-            from { transform: rotateY(0deg); }
-            to { transform: rotateY(360deg); }
-        }
-
-        .info-panel {
-            width: 300px;
-            min-height: 200px;
-            background-color: #141723;
-            border: 3px solid yellow;
-            border-radius: 10px;
-            padding: 20px;
-            display: none;
-        }
-
-        .info-panel.active {
-            display: block;
-        }
-
-        .info-panel h3 {
-            color: #F0A92B;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-        }
-
-        .info-panel ul {
-            list-style: none;
-        }
-
-        .info-panel li {
-            padding: 8px 0;
-            border-bottom: 1px solid #333;
-            color: #F0A92B;
-        }
-
-        .info-panel li:last-child {
-            border-bottom: none;
-        }
-
-        .about-section {
-            background-color: #141723;
-            padding: 40px 0;
-            margin: 60px 0;
-            border-radius: 15px;
-            border: 2px solid yellow;
-        }
-
-        .about-section h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .btn {
-            background-color: yellow;
-            color: black;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #141723;
-            color: #F0A92B;
-            border: 2px solid yellow;
-        }
-
-        footer {
-            background-color: #141723;
-            padding: 30px 0;
-            text-align: center;
-            border-top: 2px solid yellow;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .footer-section h3 {
-            color: #F0A92B;
-            margin-bottom: 15px;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #F0A92B;
-            text-decoration: none;
-        }
-
-        .footer-section a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .logo h1 {
-                font-size: 2em;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            .hero h2 {
-                font-size: 1.5em;
+            .hero-content p {
+                font-size: 1.1rem;
             }
 
-            .hero p {
-                font-size: 1em;
-                padding: 0 10px;
-            }
-
-            .house-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .info-panel {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .services-grid {
+            .about-container {
                 grid-template-columns: 1fr;
             }
 
-            .gallery {
+            .projects-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 10px;
-            }
-
-            .logo h1 {
-                font-size: 1.8em;
-            }
-
-            .tagline {
-                font-size: 1em;
-            }
-
-            .house {
-                width: 150px;
-                height: 150px;
-            }
-
-            .house-base {
-                width: 150px;
-                height: 112px;
-            }
-
-            .roof {
-                border-left: 82px solid transparent;
-                border-right: 82px solid transparent;
-                border-bottom: 60px solid #A0522D;
-                top: -60px;
-                left: -7px;
-            }
-
-            .deck {
-                width: 165px;
-                left: -7px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="modern-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <img src="logo1.png" alt="Brownings Repair Co Logo" class="logo-img">
-                    <div class="company-info">
-                    </div>
+    <!-- Header Top -->
+    <div class="header-top">
+        <a href="tel:+1234567890" class="phone-number">📞 Call Us: (865) 555-0123</a>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <img src="logo1.png" alt="Browning's Repair Company Logo" class="logo">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#what-we-offer">What We Offer</a></li>
+                    <li><a href="#reviews">Our Reviews</a></li>
+                    <li><a href="tel:+1234567890" class="nav-phone-btn">📞 (865) 555-0123</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Browning's Repair Company</h1>
+            <p>Professional Repair Services for Sevier County and Surrounding Areas</p>
+            <a href="#quote" class="cta-button">Get A Quote Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="why-us">
+        <div class="about-container">
+            <div class="about-card">
+                <img src="website2.png" alt="Our Mission">
+                <h3>Our Mission</h3>
+                <p>To provide exceptional repair services with integrity, quality craftsmanship, and unwavering commitment to our customers throughout Sevier County and beyond.</p>
+            </div>
+            <div class="about-card">
+                <img src="website3.png" alt="Our Values">
+                <h3>Our Values</h3>
+                <p>Built on faith, family, and service. We believe in honest work, fair pricing, and treating every customer like family while following God's path for our business.</p>
+            </div>
+            <div class="about-card">
+                <img src="website4.png" alt="Our Projects">
+                <h3>Our Projects</h3>
+                <p>From small repairs to major renovations, we tackle every project with the same dedication and attention to detail that has made us a trusted name since 2017.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="what-we-offer">
+        <div class="projects-container">
+            <h2>Some of Our Most Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="website5.png" alt="Recent Project 1">
                 </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="#why-us">Why Us?</a></li>
-                        <li><a href="#services">What We Offer</a></li>
-                        <li><a href="#reviews">Our Reviews</a></li>
-                    </ul>
-                </nav>
-                <div class="contact-box">
-                    <a href="tel:865-304-1009" class="phone-number">
-                        <span class="phone-icon">📞</span>
-                        <span class="phone-text">865-304-1009</span>
-                    </a>
+                <div class="project-item">
+                    <img src="website6.png" alt="Recent Project 2">
+                </div>
+                <div class="project-item">
+                    <img src="website7.png" alt="Recent Project 3">
+                </div>
+                <div class="project-item">
+                    <img src="website8.png" alt="Recent Project 4">
+                </div>
+                <div class="project-item">
+                    <img src="website9.png" alt="Recent Project 5">
+                </div>
+                <div class="project-item">
+                    <img src="website10.png" alt="Recent Project 6">
                 </div>
             </div>
         </div>
-    </header>
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h2>Welcome to Brownings Repair Co!</h2>
-                <p>We can do just about anything - decks, remodels, plumbing, electrical, HVAC, landscaping, you name it and we can do it. With over 2 years of dedicated service, we're here to help with all your repair and construction needs.</p>
-                <a href="#contact" class="btn">Get Free Quote</a>
-                <a href="#services" class="btn">View Services</a>
-            </div>
-        </section>
+    </section>
 
-        <section id="services" class="services-grid">
-            <div class="container">
-                <div class="service-card">
-                    <h3>Deck Construction & Repair</h3>
-                    <p>Custom deck building, repairs, and maintenance to enhance your outdoor living space.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Home Remodeling</h3>
-                    <p>Complete home renovations, kitchen and bathroom remodels, and interior improvements.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Plumbing Services</h3>
-                    <p>Professional plumbing installation, repairs, and maintenance for residential properties.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Electrical Work</h3>
-                    <p>Licensed electrical services including wiring, fixtures, and electrical system upgrades.</p>
-                </div>
-                <div class="service-card">
-                    <h3>HVAC Installation</h3>
-                    <p>Heating, ventilation, and air conditioning installation, repair, and maintenance.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Landscaping</h3>
-                    <p>Professional landscaping services to beautify and maintain your outdoor spaces.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="reviews-container">
+            <h2>What Our Customers Are Saying About Us</h2>
+            <p>Customer testimonials coming soon...</p>
+        </div>
+    </section>
 
-        <section id="gallery" class="gallery-section">
-            <div class="container">
-                <h2>Our Work Gallery</h2>
-                <p>Take a look at some of our recent projects and quality craftsmanship</p>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <p>Deck Construction Project<br><small>Click to add your image</small></p>
-                    </div>
-                    <div class="gallery-item">
-                        <p>Home Remodeling Project<br><small>Click to add your image</small></p>
-                    </div>
-                    <div class="gallery-item">
-                        <p>HVAC Installation<br><small>Click to add your image</small></p>
-                    </div>
-                    <div class="gallery-item">
-                        <p>Plumbing Work<br><small>Click to add your image</small></p>
-                    </div>
-                    <div class="gallery-item">
-                        <p>Electrical Services<br><small>Click to add your image</small></p>
-                    </div>
-                    <div class="gallery-item">
-                        <p>Landscaping Project<br><small>Click to add your image</small></p>
-                    </div>
+    <!-- Quote Section -->
+    <section class="quote-section" id="quote">
+        <div class="quote-container">
+            <h2>Get A Quote Now</h2>
+            <form class="quote-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            </div>
-        </section>
-
-        <section class="house-section">
-          <div class="container">
-            <h2>Explore Our Work</h2>
-            <p>Drag the house to look around! Each area represents a service we offer.</p>
-            <div class="house-3d" id="houseContainer">
-              <div class="house" id="house">
-                <div class="house-base" onclick="showServices('interior')"></div>
-                <div class="roof" onclick="showServices('roof')"></div>
-                <div class="deck" onclick="showServices('deck')"></div>
-                <div class="door" onclick="showServices('interior')"></div>
-                <div class="window left" onclick="showServices('windows')"></div>
-                <div class="window right" onclick="showServices('windows')"></div>
-                <div class="hvac-unit" onclick="showServices('hvac')"></div>
-                <div class="landscaping" onclick="showServices('landscaping')"></div>
-              </div>
-            </div>
-            <div class="info-panel" id="serviceInfo">
-              <h3>Select a part of the house</h3>
-              <p>Click on parts of the house to learn about services.</p>
-            </div>
-          </div>
-        </section>
-
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>About Brownings Repair Co</h2>
-                <div class="about-content">
-                    <p>Founded by Justin Browning, a West Virginia native with a heart to help those in need as God blesses him. Justin brings over 2 years of dedicated service to the repair and construction industry.</p>
-                    <p>As a family man with a loving wife and 3 children, Justin understands the importance of having a safe, comfortable, and well-maintained home. This personal understanding drives our commitment to providing exceptional service to every customer.</p>
-                    <p>At Brownings Repair Co, we believe that no job is too big or too small. Whether you need a simple repair or a complete home renovation, we approach every project with the same level of professionalism, quality craftsmanship, and attention to detail.</p>
-                    <p>Our mission is simple: to serve our community with integrity, quality workmanship, and fair pricing while helping families create the homes of their dreams.</p>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-            </div>
-        </section>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Property Address</label>
+                    <input type="text" id="address" name="address">
+                </div>
+                <div class="form-group">
+                    <label for="service-type">Type of Service Needed *</label>
+                    <select id="service-type" name="service-type" required>
+                        <option value="">Select a service...</option>
+                        <option value="plumbing">Plumbing Repair</option>
+                        <option value="electrical">Electrical Work</option>
+                        <option value="hvac">HVAC Services</option>
+                        <option value="roofing">Roofing Repair</option>
+                        <option value="flooring">Flooring Installation/Repair</option>
+                        <option value="drywall">Drywall Repair</option>
+                        <option value="painting">Painting Services</option>
+                        <option value="carpentry">Carpentry Work</option>
+                        <option value="general">General Handyman</option>
+                        <option value="other">Other (Please specify in description)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="urgency">How Soon Do You Need This Done?</label>
+                    <select id="urgency" name="urgency">
+                        <option value="">Select timeframe...</option>
+                        <option value="emergency">Emergency (ASAP)</option>
+                        <option value="this-week">This Week</option>
+                        <option value="next-week">Next Week</option>
+                        <option value="this-month">This Month</option>
+                        <option value="flexible">I'm Flexible</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Estimated Budget Range</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select budget range...</option>
+                        <option value="under-500">Under $500</option>
+                        <option value="500-1000">$500 - $1,000</option>
+                        <option value="1000-2500">$1,000 - $2,500</option>
+                        <option value="2500-5000">$2,500 - $5,000</option>
+                        <option value="5000-plus">$5,000+</option>
+                        <option value="not-sure">Not Sure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Detailed Description of Work Needed *</label>
+                    <textarea id="description" name="description" placeholder="Please describe what needs to be done, any specific issues you're experiencing, materials needed, etc." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="preferred-contact">Preferred Contact Method</label>
+                    <select id="preferred-contact" name="preferred-contact">
+                        <option value="phone">Phone Call</option>
+                        <option value="text">Text Message</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="best-time">Best Time to Contact You</label>
+                    <select id="best-time" name="best-time">
+                        <option value="">Select preferred time...</option>
+                        <option value="morning">Morning (8AM - 12PM)</option>
+                        <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                        <option value="evening">Evening (5PM - 8PM)</option>
+                        <option value="anytime">Anytime</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Quote Request</button>
+            </form>
+        </div>
+    </section>
 
-        <section class="cta-section">
-            <div class="container">
-                <h2>Ready to Start Your Project?</h2>
-                <p>Contact us today for a free consultation and quote</p>
-                <a href="#contact" class="btn">Get Started Today</a>
-                <a href="tel:+1234567890" class="btn">Call Now</a>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
-                    <p>Phone: (555) 123-4567</p>
-                    <p>Email: info@browningsrc.com</p>
-                    <p>Serving Sevierville and surrounding areas</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <p>Deck Construction & Repair</p>
-                    <p>Home Remodeling</p>
-                    <p>Plumbing, Electrical & HVAC</p>
-                    <p>Landscaping Services</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Business Hours</h3>
-                    <p>Monday - Friday: 7:00 AM - 6:00 PM</p>
-                    <p>Saturday: 8:00 AM - 4:00 PM</p>
-                    <p>Sunday: Emergency calls only</p>
-                    <p>Licensed & Insured</p>
-                </div>
-            </div>
-            <div style="border-top: 1px solid yellow; padding-top: 20px; margin-top: 20px;">
-                <p>&copy; 2024 Brownings Repair Co. All rights reserved. | Proudly serving Sevier County Families</p>
-            </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Browning's Repair Company. All rights reserved.</p>
+            <p>Established in 2017 by Justin Browning</p>
+            <p>Proudly serving Sevier County and surrounding areas with faith, family values, and quality craftsmanship.</p>
+            <p>Following God's path in business and life, dedicated to serving our community with integrity.</p>
+            <p>📞 (865) 555-0123 | 📧 info@browningsrepair.com</p>
         </div>
     </footer>
 
     <script>
-        function showServices(area) {
-            const infoPanel = document.getElementById('serviceInfo');
-            infoPanel.classList.add('active');
-            
-            let content = '';
-            
-            switch(area) {
-                case 'roof':
-                    content = `
-                        <h3>Roofing Services</h3>
-                        <ul>
-                            <li>Roof Repair & Replacement</li>
-                            <li>Shingle Installation</li>
-                            <li>Gutter Installation & Repair</li>
-                            <li>Roof Inspection</li>
-                            <li>Emergency Roof Repairs</li>
-                            <li>Attic Ventilation</li>
-                        </ul>
-                    `;
-                    break;
-                case 'deck':
-                    content = `
-                        <h3>Deck Services</h3>
-                        <ul>
-                            <li>Custom Deck Construction</li>
-                            <li>Deck Repair & Restoration</li>
-                            <li>Deck Staining & Sealing</li>
-                            <li>Railing Installation</li>
-                            <li>Porch Construction</li>
-                            <li>Outdoor Living Spaces</li>
-                        </ul>
-                    `;
-                    break;
-                case 'interior':
-                    content = `
-                        <h3>Interior Services</h3>
-                        <ul>
-                            <li>Kitchen Remodeling</li>
-                            <li>Bathroom Renovation</li>
-                            <li>Flooring Installation</li>
-                            <li>Drywall & Painting</li>
-                            <li>Interior Electrical Work</li>
-                            <li>Plumbing Fixtures</li>
-                        </ul>
-                    `;
-                    break;
-                case 'windows':
-                    content = `
-                        <h3>Window & Door Services</h3>
-                        <ul>
-                            <li>Window Replacement</li>
-                            <li>Door Installation</li>
-                            <li>Window Repair</li>
-                            <li>Weather Stripping</li>
-                            <li>Storm Door Installation</li>
-                            <li>Energy Efficient Upgrades</li>
-                        </ul>
-                    `;
-                    break;
-                case 'hvac':
-                    content = `
-                        <h3>HVAC Services</h3>
-                        <ul>
-                            <li>Air Conditioning Installation</li>
-                            <li>Heating System Repair</li>
-                            <li>Ductwork Installation</li>
-                            <li>HVAC Maintenance</li>
-                            <li>Thermostat Installation</li>
-                            <li>Energy Efficiency Upgrades</li>
-                        </ul>
-                    `;
-                    break;
-                case 'landscaping':
-                    content = `
-                        <h3>Landscaping Services</h3>
-                        <ul>
-                            <li>Lawn Installation & Maintenance</li>
-                            <li>Garden Design & Planting</li>
-                            <li>Hardscaping</li>
-                            <li>Drainage Solutions</li>
-                            <li>Outdoor Lighting</li>
-                            <li>Seasonal Cleanup</li>
-                        </ul>
-                    `;
-                    break;
-                default:
-                    content = `
-                        <h3>All Services</h3>
-                        <p>Click on specific parts of the house to see detailed services for each area.</p>
-                    `;
-            }
-            
-            infoPanel.innerHTML = content;
-        }
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -864,38 +571,61 @@
             });
         });
 
-        // Add some interactivity to gallery items
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                alert('Image placeholder - you can replace this with your actual project photos');
+        // Form submission handler
+        document.querySelector('.quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.phone || !data.description) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Here you would typically send the data to your server
+            alert('Thank you for your quote request! We will contact you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add glow effect to phone numbers on hover
+        document.querySelectorAll('a[href^="tel:"]').forEach(phoneLink => {
+            phoneLink.addEventListener('mouseenter', function() {
+                this.style.textShadow = '0 0 20px rgba(240, 169, 43, 1)';
+            });
+            
+            phoneLink.addEventListener('mouseleave', function() {
+                this.style.textShadow = '0 0 5px rgba(240, 169, 43, 0.5)';
             });
         });
 
-    <script>
-      let isDragging = false;
-      let previousX = 0;
-      let rotation = 0;
-    
-      const house = document.getElementById('house');
-      const container = document.getElementById('houseContainer');
-    
-      container.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        previousX = e.clientX;
-      });
-    
-      document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-          let deltaX = e.clientX - previousX;
-          rotation += deltaX * 0.5;
-          house.style.transform = `rotateY(${rotation}deg)`;
-          previousX = e.clientX;
-        }
-      });
-    
-      document.addEventListener('mouseup', () => {
-        isDragging = false;
-      });
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.about-card, .project-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
+
