@@ -593,7 +593,7 @@
     <section class="quote-section" id="quote">
         <div class="quote-container">
             <h2>Get A Quote Now</h2>
-            <form class="quote-form" id="quoteForm">
+            <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xeokjgbk" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -651,7 +651,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Detailed Description of Work Needed *</label>
-                    <textarea id="description" name="description" placeholder="Please describe what needs to be done, any specific issues you're experiencing, materials needed, etc." required></textarea>
+                    <textarea id="description" name="message" placeholder="Please describe what needs to be done, any specific issues you're experiencing, materials needed, etc." required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="preferred-contact">Preferred Contact Method</label>
@@ -721,7 +721,7 @@
                 }
             });
         });
-
+    
         // Add glow effect to phone numbers on hover
         document.querySelectorAll('a[href^="tel:"]').forEach(phoneLink => {
             phoneLink.addEventListener('mouseenter', function() {
@@ -732,13 +732,13 @@
                 this.style.textShadow = '0 0 5px rgba(240, 169, 43, 0.5)';
             });
         });
-
+    
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
+    
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -747,7 +747,7 @@
                 }
             });
         }, observerOptions);
-
+    
         // Observe elements for animation
         document.querySelectorAll('.about-card, .project-item').forEach(el => {
             el.style.opacity = '0';
@@ -755,27 +755,45 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
-
-        // Form submission handler
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    
+        // Enhanced form submission handler with Formspree integration
+        document.getElementById('quoteForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Show the thank you modal
-            document.getElementById('thankYouModal').style.display = 'block';
+            const form = e.target;
+            const formData = new FormData(form);
             
-            // Reset the form
-            this.reset();
-            
-            // Optional: Send form data to your backend here
-            // You can add your form submission logic here
-            console.log('Form submitted successfully');
+            try {
+                // Submit to Formspree
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success modal
+                    document.getElementById('thankYouModal').style.display = 'block';
+                    // Reset the form
+                    form.reset();
+                } else {
+                    // Handle error
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Show error message
+                alert('There was a problem submitting your request. Please try again or call us directly at (865) 304-1009.');
+                console.error('Form submission error:', error);
+            }
         });
-
+    
         // Close modal function
         function closeModal() {
             document.getElementById('thankYouModal').style.display = 'none';
         }
-
+    
         // Close modal when clicking outside of it
         window.onclick = function(event) {
             const modal = document.getElementById('thankYouModal');
@@ -783,7 +801,7 @@
                 modal.style.display = 'none';
             }
         }
-
+    
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
