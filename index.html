@@ -368,168 +368,148 @@
 
 
         /* Enhanced mobile styles */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        
-            /* Hide nav menu on mobile */
-            .nav-menu {
-                display: none;
-            }
-        
-            /* Mobile logo styling - longer and less height */
-            .logo {
-                height: 50px; /* Reduced height */
-                width: auto;
-                max-width: 280px; /* Longer width */
-                min-width: 200px; /* Ensure minimum width */
-            }
-        
-            /* Phone number under logo on mobile */
-            .mobile-phone {
-                display: block;
-                color: #F0A92B;
-                text-decoration: none;
-                font-size: 18px;
-                font-weight: bold;
-                background-color: #F0A92B;
-                color: #111921;
-                padding: 12px 25px;
-                border-radius: 25px;
-                transition: all 0.3s ease;
-                margin-top: 10px;
-                display: inline-block;
-            }
-        
-            .mobile-phone:hover {
-                box-shadow: 0 0 20px rgba(240, 169, 43, 0.6);
-                transform: translateY(-2px);
-            }
-        
-            /* Better hero section for mobile */
-            .hero-section {
-                height: 70vh; /* Reduced height on mobile */
-                background-position: center center;
-                background-attachment: scroll; /* Better performance on mobile */
-            }
-        
-            .hero-content {
-                padding: 0 15px;
-            }
-        
-            .hero-content h1 {
-                font-size: 2.2rem;
-                margin-bottom: 15px;
-            }
-        
-            .hero-content p {
-                font-size: 1rem;
-                margin-bottom: 25px;
-                line-height: 1.5;
-            }
-        
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-        
-            /* Better spacing for mobile sections */
-            .about-section {
-                padding: 60px 0;
-            }
-        
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 0 15px;
-            }
-        
-            .about-card {
-                padding: 25px 20px;
-            }
-        
-            .projects-section {
-                padding: 60px 0;
-            }
-        
-            .projects-container {
-                padding: 0 15px;
-            }
-        
-            .projects-container h2 {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-        
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-        
-            .project-item img {
-                height: 200px;
-            }
-        
-            /* Better quote section on mobile */
-            .quote-section {
-                padding: 60px 0;
-            }
-        
-            .quote-container {
-                padding: 0 15px;
-            }
-        
-            .quote-container h2 {
-                font-size: 2rem;
-            }
-        
-            .quote-form {
-                padding: 25px 20px;
-            }
-        
-            /* Reviews section mobile */
-            .reviews-section {
-                padding: 60px 0;
-            }
-        
-            .reviews-container h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        /* Hide mobile phone by default, show only on mobile */
-        .mobile-phone {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-phone {
-                display: inline-block;
-            }
-        }
+       /* Enhanced mobile styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Show nav menu but only phone number on mobile */
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hide other nav items on mobile, keep only phone */
+    .nav-menu li:not(:last-child) {
+        display: none;
+    }
+
+    /* Mobile logo styling - longer and less height */
+    .logo {
+        height: 50px; /* Reduced height */
+        width: auto;
+        max-width: 280px; /* Longer width */
+        min-width: 200px; /* Ensure minimum width */
+    }
+
+    /* Remove the mobile-phone class since we're using nav phone */
+    .mobile-phone {
+        display: none;
+    }
+
+    /* Better hero section for mobile */
+    .hero-section {
+        height: 70vh; /* Reduced height on mobile */
+        background-position: center center;
+        background-attachment: scroll; /* Better performance on mobile */
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Better spacing for mobile sections */
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .about-card {
+        padding: 25px 20px;
+    }
+
+    .projects-section {
+        padding: 60px 0;
+    }
+
+    .projects-container {
+        padding: 0 15px;
+    }
+
+    .projects-container h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-item img {
+        height: 200px;
+    }
+
+    /* Better quote section on mobile */
+    .quote-section {
+        padding: 60px 0;
+    }
+
+    .quote-container {
+        padding: 0 15px;
+    }
+
+    .quote-container h2 {
+        font-size: 2rem;
+    }
+
+    .quote-form {
+        padding: 25px 20px;
+    }
+
+    /* Reviews section mobile */
+    .reviews-section {
+        padding: 60px 0;
+    }
+
+    .reviews-container h2 {
+        font-size: 2rem;
+    }
+}
+
 
     </style>
 </head>
 <body>
     <!-- Main Header -->
     <!-- Main Header -->
+    <!-- Main Header -->
     <header class="main-header">
         <div class="header-container">
             <img src="images/logo1.png" alt="Browning's Repair Company Logo" class="logo">
             
-            <!-- Mobile phone number (shows only on mobile) -->
-            <a href="tel:+18655550123" class="mobile-phone">📞 (865) 555-0123</a>
-            
-            <!-- Desktop navigation (hidden on mobile) -->
+            <!-- Navigation (shows only phone on mobile, full menu on desktop) -->
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#why-us">Why Us</a></li>
                     <li><a href="#what-we-offer">What We Offer</a></li>
                     <li><a href="#reviews">Our Reviews</a></li>
-                    <li><a href="tel:+18655550123" class="nav-phone-btn">📞 (865) 555-0123</a></li>
+                    <li><a href="tel:+18655550123" class="nav-phone-
                 </ul>
             </nav>
         </div>
