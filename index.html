@@ -605,10 +605,13 @@
     <section class="quote-section" id="quote">
         <div class="quote-container">
             <h2>Get A Quote Now</h2>
-            <form class="quote-form" action="https://formspree.io/f/xeokjgbk" method="POST">
-                <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px; font-size: 1.2rem; color: #F0A92B;">
-                    Thank you for submitting! We’ll be in contact within 24 hours.
-                </div>
+            <form class="quote-form" action="your-form-endpoint" method="POST">
+                <!-- form fields here -->
+                <button type="submit">Submit</button>
+            </form>
+            <div id="thank-you-message" style="display: none; color: white; margin-top: 20px;">
+                Thank you for submitting! We will be in contact within 24 hours.
+            </div>
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
