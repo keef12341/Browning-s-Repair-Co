@@ -727,17 +727,6 @@
             });
         });
     
-        // Add glow effect to phone numbers on hover
-        document.querySelectorAll('a[href^="tel:"]').forEach(phoneLink => {
-            phoneLink.addEventListener('mouseenter', function() {
-                this.style.textShadow = '0 0 20px rgba(240, 169, 43, 1)';
-            });
-            
-            phoneLink.addEventListener('mouseleave', function() {
-                this.style.textShadow = '0 0 5px rgba(240, 169, 43, 0.5)';
-            });
-        });
-    
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
