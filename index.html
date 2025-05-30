@@ -25,56 +25,180 @@
             padding: 0 20px;
         }
 
-        header {
-            background-color: #141723;
+        /* Modern Header Styles */
+        .modern-header {
+            background-color: #111921;
             padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(255, 255, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
-        .logo h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #F0A92B;
-        }
-
-        .tagline {
-            font-size: 1.2em;
-            color: #F0A92B;
-        }
-
-        nav {
-            background-color: #141723;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
+        
+        .header-content {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
             flex-wrap: wrap;
+            gap: 20px;
         }
-
-        nav li {
-            margin: 0 15px;
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-
-        nav a {
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .company-info h1 {
+            font-size: 1.8em;
+            margin: 0;
+            color: #F0A92B;
+            font-weight: bold;
+        }
+        
+        .company-info .tagline {
+            font-size: 0.9em;
+            margin: 0;
+            color: #F0A92B;
+            opacity: 0.9;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav a {
             color: #F0A92B;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1em;
             padding: 10px 15px;
-            border-radius: 5px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a:hover {
+            background-color: rgba(240, 169, 43, 0.1);
+            color: yellow;
+            transform: translateY(-2px);
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: yellow;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .main-nav a:hover::after {
+            width: 80%;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, yellow, #F0A92B);
+            border-radius: 12px;
+            padding: 3px;
+            box-shadow: 0 4px 15px rgba(255, 255, 0, 0.3);
+        }
+        
+        .phone-number {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #111921;
+            color: yellow;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
             transition: all 0.3s ease;
         }
-
-        nav a:hover {
-            background-color: #F0A92B;
-            color: #F0A92B;
+        
+        .phone-number:hover {
+            background-color: yellow;
+            color: #111921;
+            transform: scale(1.05);
         }
-
-
+        
+        .phone-icon {
+            font-size: 1.2em;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .company-info h1 {
+                font-size: 1.5em;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .main-nav a {
+                font-size: 1em;
+                padding: 8px 12px;
+            }
+            
+            .contact-box {
+                order: -1;
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            
+            .phone-number {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+            
+            .company-info h1 {
+                font-size: 1.3em;
+            }
+            
+            .company-info .tagline {
+                font-size: 0.8em;
+            }
+        }
+        
         .hero {
             text-align: center;
             padding: 40px 0;
@@ -464,27 +588,32 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="modern-header">
         <div class="container">
-            <div class="logo">
-                <h1>Brownings Repair Co</h1>
-                <p class="tagline">Serving Sevierville and beyond for over 2 years</p>
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo1.png" alt="Brownings Repair Co Logo" class="logo-img">
+                    <div class="company-info">
+                        <h1>Brownings Repair Co</h1>
+                        <p class="tagline">Serving West Virginia and beyond for over 2 years</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#why-us">Why Us?</a></li>
+                        <li><a href="#services">What We Offer</a></li>
+                        <li><a href="#reviews">Our Reviews</a></li>
+                    </ul>
+                </nav>
+                <div class="contact-box">
+                    <a href="tel:865-304-1009" class="phone-number">
+                        <span class="phone-icon">📞</span>
+                        <span class="phone-text">865-304-1009</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Our Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <main>
         <section id="home" class="hero">
             <div class="container">
