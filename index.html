@@ -551,29 +551,28 @@
         </section>
 
         <section class="house-section">
-            <div class="container">
-                <h2>Interactive Service Guide</h2>
-                <p>Click on different parts of the house to see what services we offer for each area</p>
-                <div class="house-container">
-                    <div class="house-3d">
-                        <div class="house">
-                            <div class="house-base" onclick="showServices('interior')"></div>
-                            <div class="roof" onclick="showServices('roof')"></div>
-                            <div class="deck" onclick="showServices('deck')"></div>
-                            <div class="door" onclick="showServices('interior')"></div>
-                            <div class="window left" onclick="showServices('windows')"></div>
-                            <div class="window right" onclick="showServices('windows')"></div>
-                            <div class="hvac-unit" onclick="showServices('hvac')"></div>
-                            <div class="landscaping" onclick="showServices('landscaping')"></div>
-                        </div>
-                    </div>
-                    <div class="info-panel" id="serviceInfo">
-                        <h3>Select a part of the house</h3>
-                        <p>Click on different areas of the house to learn about our services for that specific area.</p>
-                    </div>
-                </div>
+          <div class="container">
+            <h2>Explore Our Work</h2>
+            <p>Drag the house to look around! Each area represents a service we offer.</p>
+            <div class="house-3d" id="houseContainer">
+              <div class="house" id="house">
+                <div class="house-base" onclick="showServices('interior')"></div>
+                <div class="roof" onclick="showServices('roof')"></div>
+                <div class="deck" onclick="showServices('deck')"></div>
+                <div class="door" onclick="showServices('interior')"></div>
+                <div class="window left" onclick="showServices('windows')"></div>
+                <div class="window right" onclick="showServices('windows')"></div>
+                <div class="hvac-unit" onclick="showServices('hvac')"></div>
+                <div class="landscaping" onclick="showServices('landscaping')"></div>
+              </div>
             </div>
+            <div class="info-panel" id="serviceInfo">
+              <h3>Select a part of the house</h3>
+              <p>Click on parts of the house to learn about services.</p>
+            </div>
+          </div>
         </section>
+
 
         <section id="about" class="about-section">
             <div class="container">
@@ -744,35 +743,31 @@
             });
         });
 
-        // Pause house rotation on mobile touch
-        const house = document.querySelector('.house');
-        let touchStartTime = 0;
-        
-        house.addEventListener('touchstart', function() {
-            touchStartTime = Date.now();
-            this.style.animationPlayState = 'paused';
-        });
-        
-        house.addEventListener('touchend', function() {
-            const touchDuration = Date.now() - touchStartTime;
-            if (touchDuration < 200) { // Quick tap
-                this.style.animationPlayState = 'running';
-            }
-        });
-
-        // Resume animation after 3 seconds of no interaction
-        let pauseTimeout;
-        house.addEventListener('mouseenter', function() {
-            this.style.animationPlayState = 'paused';
-            clearTimeout(pauseTimeout);
-        });
-        
-        house.addEventListener('mouseleave', function() {
-            const houseElement = this;
-            pauseTimeout = setTimeout(function() {
-                houseElement.style.animationPlayState = 'running';
-            }, 3000);
-        });
+    <script>
+      let isDragging = false;
+      let previousX = 0;
+      let rotation = 0;
+    
+      const house = document.getElementById('house');
+      const container = document.getElementById('houseContainer');
+    
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        previousX = e.clientX;
+      });
+    
+      document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          let deltaX = e.clientX - previousX;
+          rotation += deltaX * 0.5;
+          house.style.transform = `rotateY(${rotation}deg)`;
+          previousX = e.clientX;
+        }
+      });
+    
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
     </script>
 </body>
 </html>
